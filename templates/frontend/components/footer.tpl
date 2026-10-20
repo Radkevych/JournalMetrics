@@ -53,7 +53,7 @@
 				</a>
 			</div>
 			<p class="jm_footer_credit">
-				{translate key="plugins.themes.journalMetrics.footer.developedBy"}
+				Theme {translate key="plugins.themes.journalMetrics.footer.developedBy"}
 				<a href="https://orcid.org/0000-0002-2648-5726" target="_blank" rel="noopener author"><span class="jm_orcid_icon" aria-hidden="true">iD</span>Oleksandr Radkevych</a>
 			</p>
 		</div>
