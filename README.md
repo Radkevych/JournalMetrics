@@ -2,8 +2,6 @@
 
 **A numbers-first theme for OJS 3.5**
 
-[Українська версія нижче](#українська-версія)
-
 Journal Metrics is a child theme of the default OJS theme that turns a journal website into a clear, fast, and search-friendly page. It provides a wide, fluid layout without a sidebar, usage figures on the home page, the full table of contents of the latest issue, a live editorial workflow line, and a logically structured article page.
 
 ## Features
