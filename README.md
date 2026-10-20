@@ -1,49 +1,27 @@
-# Journal Metrics
+# Journal Metrics — тема для OJS 3.5
 
-**A numbers-first theme for OJS 3.5**
+Дочірня тема до теми за замовчуванням (default). Реалізує варіант «Журнал у цифрах».
 
-Journal Metrics is a child theme of the default OJS theme that turns a journal website into a clear, fast, and search-friendly page. It provides a wide, fluid layout without a sidebar, usage figures on the home page, the full table of contents of the latest issue, a live editorial workflow line, and a logically structured article page.
+## Встановлення
+1. Скопіюйте папку `journalMetrics` у `plugins/themes/` вашого OJS, щоб вийшло `plugins/themes/journalMetrics/version.xml`.
+2. Права: файли читаються веб-сервером (`chmod -R a+rX plugins/themes/journalMetrics`).
+3. Очистіть кеш шаблонів: Адміністрування → Сайт (Administration) → «Clear Template Cache» та «Clear Data Caches».
+4. Налаштування → Вебсайт → Вигляд (Appearance) → Тема → оберіть «Тема Journal Metrics» → Зберегти.
+5. Тут же задайте акцентний колір, слоган, перемикачі «Показники використання» та «Редакційний процес».
 
-## Features
+## Що робить
+- Каркас: широкий контейнер (до 1560 px) без бокової колонки; шапка: ISSN, перемикач мови, меню користувача (випадне), назва журналу, кнопка «Подати рукопис» і основне меню в один рядок; на екранах до 992 px меню стає бургером. Skip-посилання невидимі, з'являються лише для користувачів клавіатури.
+- Головна: єдиний H1, кнопки, картки (перегляди, PDF, статті, сторінки), лінія етапів редакційного процесу з позначкою, де зараз остання стаття в роботі (лише етап, без назви й автора), «Найчитаніші статті» (3 статті з двох останніх випусків), смуга з останнім оголошенням, повний список статей поточного випуску (назва, автори, DOI, перегляди, PDF).
+- Сторінка статті: назва → дата публікації → автори → DOI → PDF → анотація → ключові слова → біографія автора → список літератури → «Як цитувати» і завантаження цитування; відомості про статтю й використання — у бічній картці.
+- SEO: canonical для головної, випуску, статті (для кожної мови окремо); JSON-LD (Periodical на головній, ScholarlyArticle на статті); семантична розмітка; один H1; hreflang і мета-теги Google Scholar лишаються за ядром OJS та плагіном Google Scholar.
 
-### Layout
+## Зміна етапів редакційного процесу
+Назви й терміни етапів — у `locale/uk/locale.po` та `locale/en/locale.po` (ключі `plugins.themes.journalMetrics.workflow.*`). Ширину сегментів задають числа `flex-grow` у `templates/frontend/pages/indexJournal.tpl`.
 
-- Wide, fluid container of up to 1560 px with no sidebar; works on screens ranging from phones to ultra-wide monitors.
-- One-line main menu on desktop and a burger menu below 992 px.
-- Compact top bar with the ISSN, a language switcher with a globe icon, and a user menu displayed as a dropdown: Login, Dashboard, Profile, and Logout.
-- Skip links are hidden by default and appear only for keyboard users.
+## Статистика
+Перегляди беруться зі сервісу статистики OJS (`publicationStats`) і кешуються на 1 годину. Якщо статистика вимкнена або порожня, показники будуть нулями.
 
-### Home page
+## Для індексації в Google (поза темою)
+Увімкніть плагін Google Scholar; перевірте, що журнал «увімкнений» (не noindex); подайте https://jrnls.ivet.edu.ua/index/sitemap у Search Console; перевірте «Ручні дії» та «Проблеми безпеки».
 
-- A single `<h1>`, call-to-action buttons, and four figure cards: article views, PDF downloads, articles, and pages.
-- Editorial workflow line, “From submission to publication”: screening → review → revision → copyediting → proofreading. Segment widths are proportional to the typical duration of each stage.
-- A round marker shows the manuscript’s position within the typical duration of its current stage. For example, day 25 of 90 equals 27%.
-- A logged-in author sees the stage of their own latest submission. Other visitors see the stage of the most recently submitted manuscript. Only the stage and elapsed time are shown, never the title or author.
-- “Most read” section featuring three articles from the two latest issues.
-- Latest announcement band.
-- Full list of articles from the latest issue, including the title, authors, DOI, views, and PDF button.
-
-### Article page
-
-- Content order: title → publication date → authors → DOI → PDF → abstract → keywords → author biography → references.
-- Side column: how to cite, citation downloads in RIS and BibTeX formats, and sharing links, followed by article details, usage figures, versions, and licence information.
-- Archive page: the issue cover is displayed in a separate column, with the title and description next to it.
-
-### SEO
-
-- `rel="canonical"` for the home page, issue pages, and article pages in each language.
-- JSON-LD structured data: `Periodical` on the home page and `ScholarlyArticle` on article pages.
-- Semantic markup with one `<h1>` per page.
-- Alternate-language links and Google Scholar meta tags remain managed by the OJS core and the Google Scholar plugin.
-- Language-switcher links use `nofollow`, preventing crawlers from following `setLocale` redirects.
-
-## Requirements
-
-- OJS 3.5.x
-- PHP 8.2 or later
-- Smarty 4
-- The default OJS theme must be installed because Journal Metrics is its child theme.
-
-## Installation
-
-1. Copy the `journalMetrics` folder to `plugins/themes/` so that the following file exists:
+Ліцензія: GNU GPL v3.
