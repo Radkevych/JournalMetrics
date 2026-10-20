@@ -1,0 +1,175 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "plugins.themes.journalMetrics.name"
+msgstr "Тема Journal Metrics"
+
+msgid "plugins.themes.journalMetrics.description"
+msgstr "Дочірня тема до теми за замовчуванням. Головна сторінка з акцентом на цифри: статистика переглядів, етапи редакційного процесу та повний список статей останнього випуску; блок використання на сторінці статті; canonical-посилання та розмітка schema.org для пошукових систем."
+
+msgid "plugins.themes.journalMetrics.option.accent.label"
+msgstr "Акцентний колір"
+
+msgid "plugins.themes.journalMetrics.option.accent.description"
+msgstr "Колір кнопок, цифр і стовпчиків. Обирайте темний відтінок, щоб білий текст на ньому залишався читабельним."
+
+msgid "plugins.themes.journalMetrics.option.tagline.label"
+msgstr "Слоган на головній сторінці"
+
+msgid "plugins.themes.journalMetrics.option.tagline.description"
+msgstr "Необов'язкова друга частина заголовка головної сторінки; виводиться акцентним кольором після назви журналу."
+
+msgid "plugins.themes.journalMetrics.option.heroStats.label"
+msgstr "Показники використання"
+
+msgid "plugins.themes.journalMetrics.option.heroStats.option"
+msgstr "Показувати на головній сторінці кількість статей, переглядів і переглядів PDF поточного випуску."
+
+msgid "plugins.themes.journalMetrics.option.workflow.label"
+msgstr "Редакційний процес"
+
+msgid "plugins.themes.journalMetrics.option.workflow.option"
+msgstr "Показувати на головній сторінці смугу з етапами редакційного процесу та їх максимальною тривалістю."
+
+msgid "plugins.themes.journalMetrics.eyebrow"
+msgstr "Діамантовий відкритий доступ"
+
+msgid "plugins.themes.journalMetrics.hero.currentIssue"
+msgstr "Поточний випуск"
+
+msgid "plugins.themes.journalMetrics.hero.forAuthors"
+msgstr "Інструкції для авторів"
+
+msgid "plugins.themes.journalMetrics.header.submit"
+msgstr "Подати рукопис"
+
+msgid "plugins.themes.journalMetrics.header.language"
+msgstr "Мова"
+
+msgid "plugins.themes.journalMetrics.stats.articles"
+msgstr "статей у випуску"
+
+msgid "plugins.themes.journalMetrics.stats.views"
+msgstr "переглядів статей"
+
+msgid "plugins.themes.journalMetrics.stats.pdf"
+msgstr "переглядів PDF"
+
+msgid "plugins.themes.journalMetrics.stats.source"
+msgstr "Джерело: статистика використання цього журналу, оновлюється щогодини."
+
+msgid "plugins.themes.journalMetrics.workflow.eyebrow"
+msgstr "Редакційний процес"
+
+msgid "plugins.themes.journalMetrics.workflow.title"
+msgstr "Від подання до публікації"
+
+msgid "plugins.themes.journalMetrics.workflow.lead"
+msgstr "Максимальна тривалість етапів за даними журналу."
+
+msgid "plugins.themes.journalMetrics.workflow.screening"
+msgstr "Попередня оцінка"
+
+msgid "plugins.themes.journalMetrics.workflow.screening.term"
+msgstr "до 10 робочих днів"
+
+msgid "plugins.themes.journalMetrics.workflow.review"
+msgstr "Рецензування"
+
+msgid "plugins.themes.journalMetrics.workflow.review.term"
+msgstr "до 90 календарних днів"
+
+msgid "plugins.themes.journalMetrics.workflow.revision"
+msgstr "Доопрацювання"
+
+msgid "plugins.themes.journalMetrics.workflow.revision.term"
+msgstr "до 30 календарних днів"
+
+msgid "plugins.themes.journalMetrics.workflow.copyediting"
+msgstr "Редагування"
+
+msgid "plugins.themes.journalMetrics.workflow.copyediting.term"
+msgstr "до 14 робочих днів"
+
+msgid "plugins.themes.journalMetrics.workflow.proofreading"
+msgstr "Верстка"
+
+msgid "plugins.themes.journalMetrics.workflow.proofreading.term"
+msgstr "до 14 робочих днів"
+
+msgid "plugins.themes.journalMetrics.workflow.note"
+msgstr "Ширина сегментів пропорційна кількості днів; робочі та календарні дні вказано так, як їх визначає журнал."
+
+msgid "plugins.themes.journalMetrics.list.title"
+msgstr "Усі статті випуску"
+
+msgid "plugins.themes.journalMetrics.list.views"
+msgstr "переглядів"
+
+msgid "plugins.themes.journalMetrics.list.viewPdf"
+msgstr "Переглянути PDF"
+
+msgid "plugins.themes.journalMetrics.list.viewPdfFor"
+msgstr "Переглянути PDF: {$title}"
+
+msgid "plugins.themes.journalMetrics.footer.issn"
+msgstr "ISSN {$issn}"
+
+msgid "plugins.themes.journalMetrics.usage.title"
+msgstr "Використання"
+
+msgid "plugins.themes.journalMetrics.usage.views"
+msgstr "Переглядів цієї сторінки"
+
+msgid "plugins.themes.journalMetrics.usage.pdf"
+msgstr "Переглядів PDF"
+
+msgid "plugins.themes.journalMetrics.usage.html"
+msgstr "Переглядів HTML"
+
+msgid "plugins.themes.journalMetrics.option.workflowCurrent.label"
+msgstr "Позначка поточного етапу"
+
+msgid "plugins.themes.journalMetrics.option.workflowCurrent.option"
+msgstr "Позначати на лінії етапів, де перебуває остання рукопис у роботі (показується лише етап, без назви й автора)."
+
+msgid "plugins.themes.journalMetrics.stats.pages"
+msgstr "сторінок у випуску"
+
+msgid "plugins.themes.journalMetrics.workflow.current"
+msgstr "Остання подана стаття зараз на цьому етапі"
+
+msgid "plugins.themes.journalMetrics.mostRead.eyebrow"
+msgstr "Два останні випуски"
+
+msgid "plugins.themes.journalMetrics.mostRead.title"
+msgstr "Найчитаніші статті"
+
+msgid "plugins.themes.journalMetrics.article.pages"
+msgstr "Сторінки"
+
+msgid "plugins.themes.journalMetrics.article.details"
+msgstr "Відомості про статтю"
+
+msgid "plugins.themes.journalMetrics.article.journal"
+msgstr "Журнал"
+
+msgid "plugins.themes.journalMetrics.workflow.currentMine"
+msgstr "Ваша стаття зараз на цьому етапі"
+
+msgid "plugins.themes.journalMetrics.workflow.progress"
+msgstr "День {$day} з {$total} · {$percent} %"
+
+msgid "plugins.themes.journalMetrics.workflow.progressOver"
+msgstr "День {$day} · типовий строк етапу ({$total} днів) перевищено"
+
+msgid "plugins.themes.journalMetrics.workflow.progressHint"
+msgstr "Типовий строк етапу: {$total} днів"
+
+msgid "plugins.themes.journalMetrics.header.languageIcon"
+msgstr "Мова"

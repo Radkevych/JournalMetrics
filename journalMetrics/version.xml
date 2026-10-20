@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE version SYSTEM "../../../lib/pkp/dtd/pluginVersion.dtd">
+
+<!--
+  * plugins/themes/journalMetrics/version.xml
+  *
+  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
+  *
+  * Plugin version information.
+  -->
+<version>
+	<application>journalMetrics</application>
+	<type>plugins.themes</type>
+	<release>1.0.0.0</release>
+	<date>2026-10-20</date>
+	<lazy-load>1</lazy-load>
+	<class>JournalMetricsThemePlugin</class>
+</version>
