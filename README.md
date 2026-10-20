@@ -47,6 +47,3 @@ Journal Metrics is a child theme of the default OJS theme that turns a journal w
 ## Installation
 
 1. Copy the `journalMetrics` folder to `plugins/themes/` so that the following file exists:
-
-   ```text
-   plugins/themes/journalMetrics/version.xml
