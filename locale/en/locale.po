@@ -136,13 +136,13 @@ msgid "plugins.themes.journalMetrics.option.workflowCurrent.label"
 msgstr "Current stage marker"
 
 msgid "plugins.themes.journalMetrics.option.workflowCurrent.option"
-msgstr "Mark on the workflow line the stage of the most recent manuscript in progress (only the stage is shown, never the title or author)."
+msgstr "Mark the stage of a manuscript on the workflow line: a logged-in author sees their own submission, other visitors see the journal's latest manuscript (only the stage is shown, never the title or author)."
 
 msgid "plugins.themes.journalMetrics.stats.pages"
 msgstr "pages in the issue"
 
 msgid "plugins.themes.journalMetrics.workflow.current"
-msgstr "The latest submission is at this stage"
+msgstr "The journal's latest manuscript"
 
 msgid "plugins.themes.journalMetrics.mostRead.eyebrow"
 msgstr "Two latest issues"
@@ -160,13 +160,13 @@ msgid "plugins.themes.journalMetrics.article.journal"
 msgstr "Journal"
 
 msgid "plugins.themes.journalMetrics.workflow.currentMine"
-msgstr "Your submission is at this stage"
+msgstr "Your submission"
 
 msgid "plugins.themes.journalMetrics.workflow.progress"
 msgstr "Day {$day} of {$total} · {$percent}%"
 
 msgid "plugins.themes.journalMetrics.workflow.progressOver"
-msgstr "Day {$day} · typical term of {$total} days exceeded"
+msgstr "Day {$day} · over the {$total}-day term"
 
 msgid "plugins.themes.journalMetrics.workflow.progressHint"
 msgstr "Typical term of the stage: {$total} days"
@@ -176,3 +176,108 @@ msgstr "Language"
 
 msgid "plugins.themes.journalMetrics.footer.developedBy"
 msgstr "Developed by"
+
+msgid "plugins.themes.journalMetrics.workflow.currentOther"
+msgstr "The journal's latest manuscript (not yours)"
+
+msgid "plugins.themes.journalMetrics.workflow.hintGuest"
+msgstr "Log in as an author to see the stage of your submission."
+
+msgid "plugins.themes.journalMetrics.workflow.hintNone"
+msgstr "You have no submissions in progress."
+
+msgid "plugins.themes.journalMetrics.option.markerMode.label"
+msgstr "Who sees the stage marker"
+
+msgid "plugins.themes.journalMetrics.option.markerMode.description"
+msgstr "Applies when the current stage marker is on. A logged-in author always sees their own submission."
+
+msgid "plugins.themes.journalMetrics.option.markerMode.ownOrLatest"
+msgstr "Author: own submission; everybody else: the journal's latest manuscript"
+
+msgid "plugins.themes.journalMetrics.option.markerMode.ownOnly"
+msgstr "Only logged-in authors, for their own submission"
+
+msgid "plugins.themes.journalMetrics.option.mostRead.label"
+msgstr "Most read articles"
+
+msgid "plugins.themes.journalMetrics.option.mostRead.option"
+msgstr "Show the three most read articles of the two latest issues on the home page."
+
+msgid "plugins.themes.journalMetrics.option.issueArticles.label"
+msgstr "Issue article list"
+
+msgid "plugins.themes.journalMetrics.option.issueArticles.option"
+msgstr "Show the full list of articles of the latest issue on the home page."
+
+msgid "plugins.themes.journalMetrics.option.announcement.label"
+msgstr "Announcement band"
+
+msgid "plugins.themes.journalMetrics.option.announcement.option"
+msgstr "Show the latest announcement as a dark band on the home page."
+
+msgid "plugins.themes.journalMetrics.option.textSize.label"
+msgstr "Text size"
+
+msgid "plugins.themes.journalMetrics.option.textSize.option"
+msgstr "Show the text size buttons in the top bar."
+
+msgid "plugins.themes.journalMetrics.option.themeSwitch.label"
+msgstr "Day and night"
+
+msgid "plugins.themes.journalMetrics.option.themeSwitch.option"
+msgstr "Show the light/dark theme buttons in the top bar."
+
+msgid "plugins.themes.journalMetrics.option.themeMode.label"
+msgstr "Default theme mode"
+
+msgid "plugins.themes.journalMetrics.option.themeMode.description"
+msgstr "Used until a visitor chooses a mode. The visitor's choice is kept in their browser."
+
+msgid "plugins.themes.journalMetrics.option.themeMode.auto"
+msgstr "Automatic: dark at night, light by day"
+
+msgid "plugins.themes.journalMetrics.option.themeMode.day"
+msgstr "Always light"
+
+msgid "plugins.themes.journalMetrics.option.themeMode.night"
+msgstr "Always dark"
+
+msgid "plugins.themes.journalMetrics.option.nightFrom.label"
+msgstr "Night starts at (hour, 0–23)"
+
+msgid "plugins.themes.journalMetrics.option.nightFrom.description"
+msgstr "For the automatic mode. Hour of the visitor's device clock."
+
+msgid "plugins.themes.journalMetrics.option.nightTo.label"
+msgstr "Night ends at (hour, 0–23)"
+
+msgid "plugins.themes.journalMetrics.option.nightTo.description"
+msgstr "For the automatic mode. Hour of the visitor's device clock."
+
+msgid "plugins.themes.journalMetrics.prefs.label"
+msgstr "Display settings"
+
+msgid "plugins.themes.journalMetrics.prefs.textSize"
+msgstr "Text size"
+
+msgid "plugins.themes.journalMetrics.prefs.smaller"
+msgstr "Smaller text"
+
+msgid "plugins.themes.journalMetrics.prefs.reset"
+msgstr "Default text size"
+
+msgid "plugins.themes.journalMetrics.prefs.larger"
+msgstr "Larger text"
+
+msgid "plugins.themes.journalMetrics.prefs.theme"
+msgstr "Page colours"
+
+msgid "plugins.themes.journalMetrics.prefs.auto"
+msgstr "Automatic by time of day"
+
+msgid "plugins.themes.journalMetrics.prefs.day"
+msgstr "Light theme (day)"
+
+msgid "plugins.themes.journalMetrics.prefs.night"
+msgstr "Dark theme (night)"

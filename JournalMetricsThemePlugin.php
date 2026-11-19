@@ -108,6 +108,63 @@ class JournalMetricsThemePlugin extends ThemePlugin
             'default' => true,
         ]);
 
+        $this->addOption('workflowMarkerMode', 'FieldSelect', [
+            'label' => __('plugins.themes.journalMetrics.option.markerMode.label'),
+            'description' => __('plugins.themes.journalMetrics.option.markerMode.description'),
+            'options' => [
+                ['value' => 'own_or_latest', 'label' => __('plugins.themes.journalMetrics.option.markerMode.ownOrLatest')],
+                ['value' => 'own_only', 'label' => __('plugins.themes.journalMetrics.option.markerMode.ownOnly')],
+            ],
+            'default' => 'own_or_latest',
+        ]);
+        $this->addOption('showMostRead', 'FieldOptions', [
+            'label' => __('plugins.themes.journalMetrics.option.mostRead.label'),
+            'options' => [['value' => true, 'label' => __('plugins.themes.journalMetrics.option.mostRead.option')]],
+            'default' => true,
+        ]);
+        $this->addOption('showIssueArticles', 'FieldOptions', [
+            'label' => __('plugins.themes.journalMetrics.option.issueArticles.label'),
+            'options' => [['value' => true, 'label' => __('plugins.themes.journalMetrics.option.issueArticles.option')]],
+            'default' => true,
+        ]);
+        $this->addOption('showAnnouncementBand', 'FieldOptions', [
+            'label' => __('plugins.themes.journalMetrics.option.announcement.label'),
+            'options' => [['value' => true, 'label' => __('plugins.themes.journalMetrics.option.announcement.option')]],
+            'default' => true,
+        ]);
+        $this->addOption('showTextSize', 'FieldOptions', [
+            'label' => __('plugins.themes.journalMetrics.option.textSize.label'),
+            'options' => [['value' => true, 'label' => __('plugins.themes.journalMetrics.option.textSize.option')]],
+            'default' => true,
+        ]);
+        $this->addOption('showThemeSwitch', 'FieldOptions', [
+            'label' => __('plugins.themes.journalMetrics.option.themeSwitch.label'),
+            'options' => [['value' => true, 'label' => __('plugins.themes.journalMetrics.option.themeSwitch.option')]],
+            'default' => true,
+        ]);
+        $this->addOption('defaultThemeMode', 'FieldSelect', [
+            'label' => __('plugins.themes.journalMetrics.option.themeMode.label'),
+            'description' => __('plugins.themes.journalMetrics.option.themeMode.description'),
+            'options' => [
+                ['value' => 'auto', 'label' => __('plugins.themes.journalMetrics.option.themeMode.auto')],
+                ['value' => 'day', 'label' => __('plugins.themes.journalMetrics.option.themeMode.day')],
+                ['value' => 'night', 'label' => __('plugins.themes.journalMetrics.option.themeMode.night')],
+            ],
+            'default' => 'auto',
+        ]);
+        $this->addOption('nightFrom', 'FieldText', [
+            'label' => __('plugins.themes.journalMetrics.option.nightFrom.label'),
+            'description' => __('plugins.themes.journalMetrics.option.nightFrom.description'),
+            'size' => 'small',
+            'default' => '20',
+        ]);
+        $this->addOption('nightTo', 'FieldText', [
+            'label' => __('plugins.themes.journalMetrics.option.nightTo.label'),
+            'description' => __('plugins.themes.journalMetrics.option.nightTo.description'),
+            'size' => 'small',
+            'default' => '7',
+        ]);
+
         // Re-skin the parent theme through its LESS variables, so that every
         // page (login, search, archive, forms) follows the new look.
         $this->removeStyle('font');
@@ -311,13 +368,16 @@ class JournalMetricsThemePlugin extends ThemePlugin
     /**
      * Editorial stage shown on the workflow line.
      *
-     * For a logged-in author it is the stage of their own latest submission
-     * that is still in progress. For everybody else it is the stage of the most
-     * recently submitted manuscript in progress; only the stage is public,
-     * never the title or the author.
+     * The marker is tied to the visitor:
+     *  - a logged-in author sees the stage of their OWN latest submission that
+     *    is still in progress ('mine' => true);
+     *  - everybody else (guests, readers, authors without a submission in
+     *    progress) sees the stage of the most recently submitted manuscript of
+     *    the journal ('mine' => false), only when the theme option allows it;
+     *    only the stage is public, never the title or the author.
      *
-     * @return array|null ['index' => 0..4, 'key' => string, 'mine' => bool]; the
-     *  index follows the five segments of the workflow strip: screening,
+     * @return array|null ['index' => 0..4, 'key' => string, 'mine' => bool, ...];
+     *  the index follows the five segments of the workflow strip: screening,
      *  review, revision, copyediting, proofreading.
      */
     public function getCurrentStage(): ?array
@@ -337,12 +397,64 @@ class JournalMetricsThemePlugin extends ThemePlugin
             }
         }
 
+        if ($this->getWorkflowMarkerMode() === 'own_only') {
+            return null;
+        }
+
         $stage = Cache::remember(
             "jm_stage_{$contextId}",
             self::STAGE_CACHE_TTL,
             fn (): array => $this->findStage((int) $contextId, null) ?? []
         );
         return $stage ? $stage + ['mine' => false] : null;
+    }
+
+    /**
+     * 'own_or_latest' (default): authors see their own submission, the others
+     * see the latest one of the journal. 'own_only': only authors see a marker.
+     */
+    public function getWorkflowMarkerMode(): string
+    {
+        $mode = (string) $this->getOption('workflowMarkerMode');
+        return $mode === 'own_only' ? 'own_only' : 'own_or_latest';
+    }
+
+    /**
+     * Settings of the display panel (text size, day/night) as an array.
+     *
+     * @return array{textSize: bool, themeSwitch: bool, mode: string, nightFrom: int, nightTo: int}
+     */
+    public function getDisplayPrefs(): array
+    {
+        $flag = function (string $name): bool {
+            $value = $this->getOption($name);
+            return $value === null ? true : (bool) $value;
+        };
+        $hour = function (string $name, int $default): int {
+            $value = $this->getOption($name);
+            return ($value === null || $value === '' || !is_numeric($value))
+                ? $default
+                : max(0, min(23, (int) $value));
+        };
+        $mode = (string) $this->getOption('defaultThemeMode');
+        return [
+            'textSize' => $flag('showTextSize'),
+            'themeSwitch' => $flag('showThemeSwitch'),
+            'mode' => in_array($mode, ['auto', 'day', 'night'], true) ? $mode : 'auto',
+            'nightFrom' => $hour('nightFrom', 20),
+            'nightTo' => $hour('nightTo', 7),
+        ];
+    }
+
+    /**
+     * The same settings as a JSON string that is safe inside a script element.
+     */
+    public function getDisplayPrefsJson(): string
+    {
+        return json_encode(
+            $this->getDisplayPrefs(),
+            JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT
+        );
     }
 
     /**

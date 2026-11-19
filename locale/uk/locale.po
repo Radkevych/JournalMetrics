@@ -136,13 +136,13 @@ msgid "plugins.themes.journalMetrics.option.workflowCurrent.label"
 msgstr "Позначка поточного етапу"
 
 msgid "plugins.themes.journalMetrics.option.workflowCurrent.option"
-msgstr "Позначати на лінії етапів, де перебуває остання рукопис у роботі (показується лише етап, без назви й автора)."
+msgstr "Позначати на лінії етапів, де перебуває рукопис: автору, що увійшов, — його власна стаття, іншим відвідувачам — остання рукопис журналу (лише етап, без назви й автора)."
 
 msgid "plugins.themes.journalMetrics.stats.pages"
 msgstr "сторінок у випуску"
 
 msgid "plugins.themes.journalMetrics.workflow.current"
-msgstr "Остання подана стаття зараз на цьому етапі"
+msgstr "Остання рукопис журналу"
 
 msgid "plugins.themes.journalMetrics.mostRead.eyebrow"
 msgstr "Два останні випуски"
@@ -160,16 +160,124 @@ msgid "plugins.themes.journalMetrics.article.journal"
 msgstr "Журнал"
 
 msgid "plugins.themes.journalMetrics.workflow.currentMine"
-msgstr "Ваша стаття зараз на цьому етапі"
+msgstr "Ваша стаття"
 
 msgid "plugins.themes.journalMetrics.workflow.progress"
 msgstr "День {$day} з {$total} · {$percent} %"
 
 msgid "plugins.themes.journalMetrics.workflow.progressOver"
-msgstr "День {$day} · типовий строк етапу ({$total} днів) перевищено"
+msgstr "День {$day} · понад строк ({$total} дн.)"
 
 msgid "plugins.themes.journalMetrics.workflow.progressHint"
 msgstr "Типовий строк етапу: {$total} днів"
 
 msgid "plugins.themes.journalMetrics.header.languageIcon"
 msgstr "Мова"
+
+msgid "plugins.themes.journalMetrics.footer.developedBy"
+msgstr "Розроблено"
+
+msgid "plugins.themes.journalMetrics.workflow.currentOther"
+msgstr "Остання рукопис журналу (не ваша)"
+
+msgid "plugins.themes.journalMetrics.workflow.hintGuest"
+msgstr "Увійдіть як автор, щоб побачити, на якому етапі ваша стаття."
+
+msgid "plugins.themes.journalMetrics.workflow.hintNone"
+msgstr "У вас немає статей у роботі."
+
+msgid "plugins.themes.journalMetrics.option.markerMode.label"
+msgstr "Кому показувати позначку етапу"
+
+msgid "plugins.themes.journalMetrics.option.markerMode.description"
+msgstr "Діє, коли ввімкнено позначку поточного етапу. Автор, що увійшов, завжди бачить свою статтю."
+
+msgid "plugins.themes.journalMetrics.option.markerMode.ownOrLatest"
+msgstr "Автору — його статтю, решті — останню рукопис журналу"
+
+msgid "plugins.themes.journalMetrics.option.markerMode.ownOnly"
+msgstr "Лише авторам, що увійшли, — їхню статтю"
+
+msgid "plugins.themes.journalMetrics.option.mostRead.label"
+msgstr "Найчитаніші статті"
+
+msgid "plugins.themes.journalMetrics.option.mostRead.option"
+msgstr "Показувати на головній три найчитаніші статті двох останніх випусків."
+
+msgid "plugins.themes.journalMetrics.option.issueArticles.label"
+msgstr "Список статей випуску"
+
+msgid "plugins.themes.journalMetrics.option.issueArticles.option"
+msgstr "Показувати на головній повний список статей останнього випуску."
+
+msgid "plugins.themes.journalMetrics.option.announcement.label"
+msgstr "Смуга оголошення"
+
+msgid "plugins.themes.journalMetrics.option.announcement.option"
+msgstr "Показувати на головній останнє оголошення темною смугою."
+
+msgid "plugins.themes.journalMetrics.option.textSize.label"
+msgstr "Розмір тексту"
+
+msgid "plugins.themes.journalMetrics.option.textSize.option"
+msgstr "Показувати у верхній смузі кнопки зміни розміру тексту."
+
+msgid "plugins.themes.journalMetrics.option.themeSwitch.label"
+msgstr "День і ніч"
+
+msgid "plugins.themes.journalMetrics.option.themeSwitch.option"
+msgstr "Показувати у верхній смузі кнопки перемикання світлої та темної теми."
+
+msgid "plugins.themes.journalMetrics.option.themeMode.label"
+msgstr "Режим теми за замовчуванням"
+
+msgid "plugins.themes.journalMetrics.option.themeMode.description"
+msgstr "Застосовується, поки відвідувач сам не обрав режим. Вибір відвідувача зберігається в його браузері."
+
+msgid "plugins.themes.journalMetrics.option.themeMode.auto"
+msgstr "Автоматично: вночі темна, вдень світла"
+
+msgid "plugins.themes.journalMetrics.option.themeMode.day"
+msgstr "Завжди світла"
+
+msgid "plugins.themes.journalMetrics.option.themeMode.night"
+msgstr "Завжди темна"
+
+msgid "plugins.themes.journalMetrics.option.nightFrom.label"
+msgstr "Ніч починається о (година, 0–23)"
+
+msgid "plugins.themes.journalMetrics.option.nightFrom.description"
+msgstr "Для автоматичного режиму. Година за часом на пристрої відвідувача."
+
+msgid "plugins.themes.journalMetrics.option.nightTo.label"
+msgstr "Ніч закінчується о (година, 0–23)"
+
+msgid "plugins.themes.journalMetrics.option.nightTo.description"
+msgstr "Для автоматичного режиму. Година за часом на пристрої відвідувача."
+
+msgid "plugins.themes.journalMetrics.prefs.label"
+msgstr "Параметри відображення"
+
+msgid "plugins.themes.journalMetrics.prefs.textSize"
+msgstr "Розмір тексту"
+
+msgid "plugins.themes.journalMetrics.prefs.smaller"
+msgstr "Зменшити текст"
+
+msgid "plugins.themes.journalMetrics.prefs.reset"
+msgstr "Звичайний розмір тексту"
+
+msgid "plugins.themes.journalMetrics.prefs.larger"
+msgstr "Збільшити текст"
+
+msgid "plugins.themes.journalMetrics.prefs.theme"
+msgstr "Колір сторінки"
+
+msgid "plugins.themes.journalMetrics.prefs.auto"
+msgstr "Автоматично за часом доби"
+
+msgid "plugins.themes.journalMetrics.prefs.day"
+msgstr "Світла тема (день)"
+
+msgid "plugins.themes.journalMetrics.prefs.night"
+msgstr "Темна тема (ніч)"

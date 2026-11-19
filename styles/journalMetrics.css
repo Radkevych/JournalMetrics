@@ -10,6 +10,616 @@
  */
 
 :root {
+	--jm-bg: #fff;
+	--jm-ink-2: #2A2A2A;
+	--jm-muted: #5A5A5A;
+	--jm-track: #C9CCD2;
+	--jm-inv-bg: #141414;
+	--jm-inv-fg: #fff;
+	--jm-dark-band: #141414;
+	--jm-accent-text: var(--jm-accent);
+}
+
+/* Dark theme (set by the display panel or by the time of day) */
+html[data-jm-theme="dark"] {
+	--jm-bg: #111214;
+	--jm-ink: #EDEEF0;
+	--jm-ink-2: #D5D8DD;
+	--jm-ink-soft: #B4B8C0;
+	--jm-muted: #A2A7B0;
+	--jm-line: #2C2F36;
+	--jm-neutral: #1A1C21;
+	--jm-track: #3A3E46;
+	--jm-inv-bg: #EDEEF0;
+	--jm-inv-fg: #111214;
+	--jm-dark: #050506;
+	--jm-dark-band: #22252B;
+	--jm-accent-text: color-mix(in srgb, var(--jm-accent) 55%, #fff);
+}
+
+/* ---------- Dark theme for the components of the parent theme (generated) ---------- */
+
+:where(html[data-jm-theme="dark"]) mark {
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_button,
+:where(html[data-jm-theme="dark"]) .pkp_button_primary,
+:where(html[data-jm-theme="dark"]) .pkp_button_offset,
+:where(html[data-jm-theme="dark"]) .pkp_button_link {
+	background: var(--jm-bg);
+	border: 1px solid var(--jm-line);
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_button:hover,
+:where(html[data-jm-theme="dark"]) .pkp_button:focus,
+:where(html[data-jm-theme="dark"]) .pkp_button_primary:hover,
+:where(html[data-jm-theme="dark"]) .pkp_button_primary:focus,
+:where(html[data-jm-theme="dark"]) .pkp_button_offset:hover,
+:where(html[data-jm-theme="dark"]) .pkp_button_offset:focus,
+:where(html[data-jm-theme="dark"]) .pkp_button_link:hover,
+:where(html[data-jm-theme="dark"]) .pkp_button_link:focus {
+	color: var(--jm-ink);
+	border-color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_button:disabled,
+:where(html[data-jm-theme="dark"]) .pkp_button_primary:disabled,
+:where(html[data-jm-theme="dark"]) .pkp_button_offset:disabled,
+:where(html[data-jm-theme="dark"]) .pkp_button_link:disabled {
+	color: var(--jm-muted);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_button:disabled:hover,
+:where(html[data-jm-theme="dark"]) .pkp_button_primary:disabled:hover,
+:where(html[data-jm-theme="dark"]) .pkp_button_offset:disabled:hover,
+:where(html[data-jm-theme="dark"]) .pkp_button_link:disabled:hover {
+	color: var(--jm-muted);
+	border-color: var(--jm-line);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_button_primary {
+	color: var(--jm-inv-fg);
+	background: var(--jm-inv-bg);
+	border-color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_button_primary:hover,
+:where(html[data-jm-theme="dark"]) .pkp_button_primary:focus {
+	background: var(--jm-accent);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_screen_reader:focus,
+:where(html[data-jm-theme="dark"]) .pkp_page_index .cmp_announcements h2:focus {
+	background-color: var(--jm-bg);
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_uploadedFile_summary .details {
+	color: var(--jm-ink-soft);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_uploadedFile_summary .details>span:before {
+	color: var(--jm-muted);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_uploadedFile_summary .print:before {
+	color: var(--jm-muted);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_helpers_underline:after {
+	border-bottom: 2px solid var(--jm-bg);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_helpers_form_input_title_text {
+	color: var(--jm-muted);
+}
+
+:where(html[data-jm-theme="dark"]) .orcid-failure {
+	background: #3A1F14;
+}
+
+:where(html[data-jm-theme="dark"]) .orcid-success {
+	background: #16301B;
+}
+
+:where(html[data-jm-theme="dark"]) .cmp_button,
+:where(html[data-jm-theme="dark"]) .cmp_form .buttons button,
+:where(html[data-jm-theme="dark"]) .page_lost_password .buttons button,
+:where(html[data-jm-theme="dark"]) .page_search .submit button,
+:where(html[data-jm-theme="dark"]) .block_make_submission a {
+	background: var(--jm-neutral);
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .cmp_button_wire,
+:where(html[data-jm-theme="dark"]) .obj_galley_link {
+	background: var(--jm-bg);
+	border: 1px solid var(--jm-ink);
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .cmp_button_wire:hover,
+:where(html[data-jm-theme="dark"]) .cmp_button_wire:focus,
+:where(html[data-jm-theme="dark"]) .obj_galley_link:hover,
+:where(html[data-jm-theme="dark"]) .obj_galley_link:focus {
+	background: var(--jm-inv-bg);
+	color: var(--jm-inv-fg);
+}
+
+:where(html[data-jm-theme="dark"]) .cmp_form input[type="text"],
+:where(html[data-jm-theme="dark"]) .cmp_form input[type="email"],
+:where(html[data-jm-theme="dark"]) .cmp_form input[type="password"],
+:where(html[data-jm-theme="dark"]) .cmp_form input[type="url"],
+:where(html[data-jm-theme="dark"]) .cmp_form input[type="tel"],
+:where(html[data-jm-theme="dark"]) .cmp_form select,
+:where(html[data-jm-theme="dark"]) .cmp_form textarea {
+	background: var(--jm-bg);
+}
+
+:where(html[data-jm-theme="dark"]) .cmp_form .description {
+	color: var(--jm-ink-soft);
+}
+
+:where(html[data-jm-theme="dark"]) .cmp_notification {
+	background: var(--jm-line);
+	border-left: .357rem solid var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .cmp_breadcrumbs .separator {
+	color: var(--jm-ink-soft);
+}
+
+:where(html[data-jm-theme="dark"]) .cmp_breadcrumbs .current {
+	color: var(--jm-ink-soft);
+}
+
+:where(html[data-jm-theme="dark"]) .cmp_announcements.cmp_announcements>li {
+	border-bottom: 1px solid var(--jm-line);
+}
+
+:where(html[data-jm-theme="dark"]) .cmp_skip_to_content a {
+	background: var(--jm-bg);
+}
+
+:where(html[data-jm-theme="dark"]) .cmp_skip_to_content a:focus {
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .cmp_table {
+	border: 1px solid var(--jm-line);
+}
+
+:where(html[data-jm-theme="dark"]) .cmp_table th,
+:where(html[data-jm-theme="dark"]) .cmp_table td {
+	border-bottom: 1px solid var(--jm-line);
+}
+
+:where(html[data-jm-theme="dark"]) html,
+:where(html[data-jm-theme="dark"]) body {
+	color: var(--jm-ink);
+	background: var(--jm-bg);
+}
+
+:where(html[data-jm-theme="dark"]) a {
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) a:hover,
+:where(html[data-jm-theme="dark"]) a:focus {
+	color: var(--jm-accent-text);
+}
+
+@media (min-width:768px) {
+:where(html[data-jm-theme="dark"]) .pkp_structure_main:before,
+:where(html[data-jm-theme="dark"]) .pkp_structure_main:after {
+	background: var(--jm-line);
+}
+
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_structure_head {
+	background-color: var(--jm-bg);
+	border-bottom: 1px solid var(--jm-line);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_site_name {
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_site_name .is_text {
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_site_nav_menu {
+	background: var(--jm-bg);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_site_nav_menu a {
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_site_nav_menu a:hover,
+:where(html[data-jm-theme="dark"]) .pkp_site_nav_menu a:focus {
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_navigation_user.pkp_navigation_user {
+	border-top: 1px solid var(--jm-line);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_navigation_user .task_count {
+	background: var(--jm-line);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_navigation_user>li>ul a .task_count {
+	background: var(--jm-line);
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_navigation_search_wrapper {
+	border-top: 1px solid var(--jm-line);
+}
+
+@media (min-width:992px) {
+:where(html[data-jm-theme="dark"]) .pkp_nav_list ul {
+	background: var(--jm-bg);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_nav_list ul a {
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_nav_list ul a:hover,
+:where(html[data-jm-theme="dark"]) .pkp_nav_list ul a:focus {
+	background: var(--jm-line);
+	border-color: var(--jm-ink);
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_navigation_primary>li>a {
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_navigation_primary>li>a:hover {
+	color: var(--jm-ink);
+	border-color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_navigation_primary>li>a:focus {
+	background: var(--jm-inv-bg);
+	color: var(--jm-inv-fg);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_navigation_primary .dropdown-menu a:focus,
+:where(html[data-jm-theme="dark"]) .pkp_navigation_primary .dropdown-menu a:hover {
+	border-color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_navigation_user>li>a:focus {
+	background: var(--jm-inv-bg);
+	color: var(--jm-inv-fg);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_navigation_user>li>a:focus .task_count {
+	background: var(--jm-bg);
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_navigation_search_wrapper a {
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_navigation_search_wrapper a:hover {
+	color: var(--jm-ink);
+	border-color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_navigation_search_wrapper a:focus {
+	background: var(--jm-inv-bg);
+	color: var(--jm-inv-fg);
+}
+
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_structure_main .page .monograph_count {
+	color: var(--jm-ink-soft);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_structure_main .page .about_section {
+	color: var(--jm-ink-soft);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_site_nav_toggle>span {
+	border-bottom: 3px solid var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_site_nav_toggle>span:before,
+:where(html[data-jm-theme="dark"]) .pkp_site_nav_toggle>span:after {
+	background: var(--jm-inv-bg);
+}
+
+:where(html[data-jm-theme="dark"]) .highlights {
+	background: var(--jm-line);
+}
+
+@media (min-width:768px) {
+:where(html[data-jm-theme="dark"]) .pkp_page_index .journals>ul>li {
+	border-top: 1px solid var(--jm-line);
+}
+
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_page_index .cmp_announcements {
+	border-top: 1px solid var(--jm-line);
+	border-bottom: 1px solid var(--jm-line);
+}
+
+@media (min-width:768px) {
+:where(html[data-jm-theme="dark"]) .pkp_page_index .cmp_announcements>.obj_announcement_summary:before {
+	border-left: 1px solid var(--jm-line);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_page_index .cmp_announcements .more:before {
+	border-left: 1px solid var(--jm-line);
+}
+
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_page_index .current_issue .read_more {
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_page_index .current_issue .read_more:hover,
+:where(html[data-jm-theme="dark"]) .pkp_page_index .current_issue .read_more:focus {
+	color: var(--jm-accent-text);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_page_index .additional_content {
+	border-top: 1px solid var(--jm-line);
+}
+
+:where(html[data-jm-theme="dark"]) .page_catalog_category .article_count {
+	color: var(--jm-ink-soft);
+}
+
+@media (min-width:768px) {
+:where(html[data-jm-theme="dark"]) .page_catalog_category .subcategories {
+	border-top: 1px solid var(--jm-line);
+	border-bottom: 1px solid var(--jm-line);
+}
+
+:where(html[data-jm-theme="dark"]) .page_catalog_category .subcategories h2 {
+	background: var(--jm-bg);
+	color: var(--jm-ink-soft);
+}
+
+}
+
+@media (min-width:768px) {
+:where(html[data-jm-theme="dark"]) .page_catalog_category h2.title:focus {
+	background-color: var(--jm-bg);
+	color: var(--jm-ink);
+}
+
+}
+
+:where(html[data-jm-theme="dark"]) .page_masthead .user_listing .affiliation {
+	color: var(--jm-ink-soft);
+}
+
+:where(html[data-jm-theme="dark"]) .page_masthead .user_listing .date_start {
+	color: var(--jm-ink-soft);
+}
+
+:where(html[data-jm-theme="dark"]) .page_issue_archive .issues_archive {
+	border-top: 1px solid var(--jm-line);
+}
+
+:where(html[data-jm-theme="dark"]) .page_issue_archive .issues_archive>li {
+	border-bottom: 1px solid var(--jm-line);
+}
+
+:where(html[data-jm-theme="dark"]) .page_register .required_label {
+	color: var(--jm-ink-soft);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_op_register .ui-helper-hidden-accessible:focus {
+	background-color: var(--jm-bg);
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .page_search .search_advanced {
+	border: 1px solid var(--jm-line);
+}
+
+:where(html[data-jm-theme="dark"]) .page_search .date_range label:focus {
+	background-color: var(--jm-bg);
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .page_search .submit button:after {
+	background: var(--jm-inv-bg);
+	color: var(--jm-inv-fg);
+}
+
+:where(html[data-jm-theme="dark"]) .page_search .submit button:hover:after,
+:where(html[data-jm-theme="dark"]) .page_search .submit button:focus:after {
+	background: var(--jm-accent);
+}
+
+:where(html[data-jm-theme="dark"]) .page_search .cmp_pagination {
+	color: var(--jm-ink-soft);
+}
+
+:where(html[data-jm-theme="dark"]) .header_view {
+	background: var(--jm-inv-bg);
+}
+
+:where(html[data-jm-theme="dark"]) .header_view .return {
+	background: var(--jm-bg);
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .header_view .return:hover,
+:where(html[data-jm-theme="dark"]) .header_view .return:focus {
+	background: var(--jm-accent);
+}
+
+:where(html[data-jm-theme="dark"]) .header_view .title:hover,
+:where(html[data-jm-theme="dark"]) .header_view .title:focus {
+	background: var(--jm-accent);
+}
+
+:where(html[data-jm-theme="dark"]) .header_view .download {
+	background: var(--jm-bg);
+}
+
+:where(html[data-jm-theme="dark"]) .header_view .download:hover,
+:where(html[data-jm-theme="dark"]) .header_view .download:focus {
+	background: var(--jm-accent);
+}
+
+:where(html[data-jm-theme="dark"]) .galley_view .galley_view_notice_message {
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .galley_view .galley_view_notice_message a {
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .obj_announcement_full .date {
+	color: var(--jm-ink-soft);
+}
+
+:where(html[data-jm-theme="dark"]) .obj_announcement_summary .date {
+	color: var(--jm-ink-soft);
+}
+
+:where(html[data-jm-theme="dark"]) .obj_announcement_summary .read_more {
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .obj_announcement_summary .read_more:hover,
+:where(html[data-jm-theme="dark"]) .obj_announcement_summary .read_more:focus {
+	color: var(--jm-accent-text);
+}
+
+:where(html[data-jm-theme="dark"]) .obj_article_details .authors .affiliation {
+	color: var(--jm-ink-soft);
+}
+
+:where(html[data-jm-theme="dark"]) .obj_article_details .entry_details {
+	border-top: 1px solid var(--jm-line);
+}
+
+:where(html[data-jm-theme="dark"]) .obj_article_details .entry_details .item {
+	border-bottom: 1px solid var(--jm-line);
+}
+
+:where(html[data-jm-theme="dark"]) .obj_article_details .entry_details .item .label {
+	color: var(--jm-ink-soft);
+}
+
+:where(html[data-jm-theme="dark"]) .obj_article_details .citation_display .citation_formats_button {
+	color: var(--jm-ink-soft);
+}
+
+:where(html[data-jm-theme="dark"]) .obj_article_details .citation_display .citation_formats_button:focus {
+	background: var(--jm-line);
+}
+
+:where(html[data-jm-theme="dark"]) .obj_article_details .citation_display .citation_formats_styles a {
+	border-bottom: 1px solid var(--jm-line);
+}
+
+:where(html[data-jm-theme="dark"]) .obj_article_details .citation_display .citation_formats_styles a:focus {
+	background: var(--jm-line);
+}
+
+:where(html[data-jm-theme="dark"]) .obj_article_details .citation_display .citation_formats_styles+.label {
+	border-top: 1px solid var(--jm-line);
+}
+
+@media (min-width:768px) {
+:where(html[data-jm-theme="dark"]) .obj_article_details .row {
+	border-top: 1px solid var(--jm-line);
+	border-bottom: 1px solid var(--jm-line);
+}
+
+:where(html[data-jm-theme="dark"]) .obj_article_details .main_entry {
+	border-right: 1px solid var(--jm-line);
+}
+
+:where(html[data-jm-theme="dark"]) .obj_article_details .entry_details {
+	border-left: 1px solid var(--jm-line);
+}
+
+:where(html[data-jm-theme="dark"]) .obj_article_details .entry_details .item {
+	border-bottom: 1px solid var(--jm-line);
+}
+
+}
+
+:where(html[data-jm-theme="dark"]) .obj_article_summary .subtitle {
+	color: var(--jm-ink-soft);
+}
+
+:where(html[data-jm-theme="dark"]) .obj_article_summary .pages,
+:where(html[data-jm-theme="dark"]) .obj_article_summary .published {
+	color: var(--jm-ink-soft);
+}
+
+:where(html[data-jm-theme="dark"]) .obj_galley_link_supplementary {
+	color: var(--jm-ink);
+}
+
+:where(html[data-jm-theme="dark"]) .obj_galley_link_supplementary:hover,
+:where(html[data-jm-theme="dark"]) .obj_galley_link_supplementary:focus {
+	color: var(--jm-accent-text);
+}
+
+:where(html[data-jm-theme="dark"]) .obj_issue_summary .series {
+	color: var(--jm-ink-soft);
+}
+
+@media (min-width:768px) {
+:where(html[data-jm-theme="dark"]) .obj_issue_toc .galleys:before,
+:where(html[data-jm-theme="dark"]) .obj_issue_toc .section:before {
+	border-top: 1px solid var(--jm-line);
+}
+
+:where(html[data-jm-theme="dark"]) .obj_issue_toc .galleys>h2,
+:where(html[data-jm-theme="dark"]) .obj_issue_toc .section>h2,
+:where(html[data-jm-theme="dark"]) .obj_issue_toc .galleys>h3,
+:where(html[data-jm-theme="dark"]) .obj_issue_toc .section>h3 {
+	background: var(--jm-bg);
+	color: var(--jm-ink-soft);
+}
+
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_block .title {
+	color: var(--jm-ink-soft);
+}
+
+:where(html[data-jm-theme="dark"]) .block_browse .has_submenu {
+	color: var(--jm-ink-soft);
+}
+
+:where(html[data-jm-theme="dark"]) .block_browse .current a {
+	border-left: 4px solid var(--jm-line);
+	color: var(--jm-ink-soft);
+}
+
+:where(html[data-jm-theme="dark"]) .pkp_structure_footer_wrapper {
+	background: var(--jm-line);
+}
+
+
+
+:root {
 	--jm-accent: #C2410C;
 	--jm-ink: #141414;
 	--jm-ink-soft: #4A4A4A;
@@ -26,12 +636,12 @@
 body {
 	font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 	color: var(--jm-ink);
-	background: #fff;
+	background: var(--jm-bg);
 	-webkit-font-smoothing: antialiased;
 }
 
 a {
-	color: var(--jm-accent);
+	color: var(--jm-accent-text);
 }
 
 a:focus-visible,
@@ -46,7 +656,7 @@ button:focus-visible {
 }
 
 .jm_accent {
-	color: var(--jm-accent);
+	color: var(--jm-accent-text);
 }
 
 .jm_screen_reader {
@@ -68,7 +678,7 @@ button:focus-visible {
 	left: -9999px;
 	z-index: 10000;
 	padding: 8px;
-	background: #fff;
+	background: var(--jm-bg);
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -174,7 +784,7 @@ button:focus-visible {
 /* ---------- Header: top bar ---------- */
 
 .pkp_structure_head {
-	background: #fff;
+	background: var(--jm-bg);
 	border-bottom: 1px solid var(--jm-line);
 }
 
@@ -183,7 +793,7 @@ button:focus-visible {
 	z-index: 20;
 	background: var(--jm-neutral);
 	border-bottom: 1px solid var(--jm-line);
-	font-size: 13px;
+	font-size: 0.929rem;
 }
 
 .jm_topbar_inner {
@@ -215,63 +825,44 @@ button:focus-visible {
 	gap: 1px;
 }
 
-/* Language switcher: globe on the left, language buttons on the right */
-.jm_lang {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 6px;
-}
-
-/* Globe icon */
+/* The globe sits above the language buttons */
 .jm_lang_icon {
 	display: block;
-	flex: 0 0 16px;
+	flex: none;
 	width: 16px;
 	height: 16px;
 	color: var(--jm-ink-soft);
 }
 
-/* Language buttons container */
 .jm_lang ul {
 	display: flex;
-	flex-direction: row;
-	align-items: center;
 	gap: 2px;
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
-/* Language button item */
 .jm_lang li {
 	margin: 0;
 	padding: 0;
 }
 
-/* Language button */
 .jm_lang a {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
+	display: inline-block;
 	padding: 4px 10px;
 	border-radius: 999px;
 	color: var(--jm-ink);
 	font-weight: 700;
-	line-height: 1;
 	text-decoration: none;
-	white-space: nowrap;
 }
 
-/* Language button hover state */
 .jm_lang a:hover {
-	background: #fff;
+	background: var(--jm-bg);
 }
 
-/* Current language */
 .jm_lang a.is_current {
-	background: var(--jm-ink);
-	color: #fff;
+	background: var(--jm-inv-bg);
+	color: var(--jm-inv-fg);
 }
 
 /* User menu (login, dashboard, profile, logout) as a compact dropdown */
@@ -303,7 +894,7 @@ button:focus-visible {
 	padding: 5px 10px;
 	border-radius: 6px;
 	color: var(--jm-ink);
-	font-size: 13px;
+	font-size: 0.929rem;
 	font-weight: 700;
 	line-height: 1.3;
 	text-decoration: none;
@@ -311,7 +902,7 @@ button:focus-visible {
 
 .jm_topbar .jm_user ul.pkp_navigation_user > li > a:hover,
 .jm_topbar .jm_user ul.pkp_navigation_user > li > a:focus {
-	background: #fff;
+	background: var(--jm-bg);
 	color: var(--jm-ink);
 }
 
@@ -342,7 +933,7 @@ button:focus-visible {
 	margin: 4px 0 0;
 	padding: 6px;
 	list-style: none;
-	background: #fff;
+	background: var(--jm-bg);
 	border: 1px solid var(--jm-line);
 	border-radius: 10px;
 	box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
@@ -368,7 +959,7 @@ button:focus-visible {
 	border: 0;
 	border-radius: 6px;
 	color: var(--jm-ink);
-	font-size: 14px;
+	font-size: 1rem;
 	font-weight: 600;
 	text-decoration: none;
 }
@@ -388,7 +979,7 @@ button:focus-visible {
 	border-radius: 11px;
 	background: var(--jm-accent);
 	color: #fff;
-	font-size: 12px;
+	font-size: 0.857rem;
 	line-height: 22px;
 	text-align: center;
 	box-sizing: border-box;
@@ -415,7 +1006,7 @@ button:focus-visible {
 	background: var(--jm-accent);
 	color: #fff !important;
 	font-weight: 700;
-	font-size: 14px;
+	font-size: 1rem;
 	line-height: 1.2;
 	text-decoration: none !important;
 	white-space: nowrap;
@@ -423,7 +1014,8 @@ button:focus-visible {
 
 .pkp_navigation_primary_wrapper .jm_cta:hover,
 .pkp_navigation_primary_wrapper .jm_cta:focus {
-	background: var(--jm-ink);
+	background: var(--jm-inv-bg);
+	color: var(--jm-inv-fg) !important;
 }
 
 /* Small screens: burger menu, panel under the header */
@@ -465,7 +1057,7 @@ button:focus-visible {
 	}
 
 	.pkp_site_name .is_text {
-		font-size: 17px;
+		font-size: 1.214rem;
 	}
 }
 
@@ -499,7 +1091,7 @@ button:focus-visible {
 	}
 
 	.pkp_site_name .is_text {
-		font-size: 24px;
+		font-size: 1.714rem;
 		line-height: 1.2;
 	}
 
@@ -556,7 +1148,7 @@ button:focus-visible {
 		padding: 14px 0 12px;
 		border-bottom: 2px solid transparent;
 		color: var(--jm-ink);
-		font-size: 14px;
+		font-size: 1rem;
 		font-weight: 600;
 		line-height: 1.3;
 		white-space: nowrap;
@@ -581,7 +1173,7 @@ button:focus-visible {
 		min-width: 14rem;
 		width: auto;
 		padding: 6px;
-		background: #fff;
+		background: var(--jm-bg);
 		border: 1px solid var(--jm-line);
 		border-radius: 10px;
 		box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
@@ -599,7 +1191,7 @@ button:focus-visible {
 		border: 0;
 		border-radius: 6px;
 		color: var(--jm-ink);
-		font-size: 14px;
+		font-size: 1rem;
 		font-weight: 600;
 		white-space: normal;
 	}
@@ -613,7 +1205,7 @@ button:focus-visible {
 
 @media (min-width: 992px) and (max-width: 1279px) {
 	.pkp_site_nav_menu .pkp_navigation_primary > li > a {
-		font-size: 13px;
+		font-size: 0.929rem;
 	}
 }
 
@@ -625,11 +1217,11 @@ button:focus-visible {
 
 .jm_eyebrow {
 	margin: 0 0 14px;
-	font-size: 12px;
+	font-size: 0.857rem;
 	font-weight: 800;
 	letter-spacing: 0.12em;
 	text-transform: uppercase;
-	color: var(--jm-accent);
+	color: var(--jm-accent-text);
 }
 
 .jm_eyebrow .jm_mono {
@@ -647,7 +1239,7 @@ button:focus-visible {
 
 .jm_home h2 {
 	margin: 0;
-	font-size: clamp(26px, 3vw, 38px);
+	font-size: clamp(1.857rem, 3vw, 2.714rem);
 	font-weight: 800;
 	line-height: 1.15;
 	letter-spacing: -0.02em;
@@ -662,9 +1254,9 @@ button:focus-visible {
 .jm_source {
 	margin: 14px 0 0;
 	font-family: var(--jm-mono);
-	font-size: 12px;
+	font-size: 0.857rem;
 	line-height: 1.5;
-	color: #5A5A5A;
+	color: var(--jm-muted);
 }
 
 .jm_btn {
@@ -672,15 +1264,15 @@ button:focus-visible {
 	padding: 14px 24px;
 	border: 2px solid var(--jm-ink);
 	border-radius: 8px;
-	font-size: 15px;
+	font-size: 1.071rem;
 	font-weight: 700;
 	line-height: 1.2;
 	text-decoration: none;
 }
 
 .jm_btn_primary {
-	background: var(--jm-ink);
-	color: #fff;
+	background: var(--jm-inv-bg);
+	color: var(--jm-inv-fg);
 }
 
 .jm_btn_primary:hover,
@@ -691,14 +1283,14 @@ button:focus-visible {
 }
 
 .jm_btn_ghost {
-	background: #fff;
+	background: var(--jm-bg);
 	color: var(--jm-ink);
 }
 
 .jm_btn_ghost:hover,
 .jm_btn_ghost:focus {
-	background: var(--jm-ink);
-	color: #fff;
+	background: var(--jm-inv-bg);
+	color: var(--jm-inv-fg);
 }
 
 .jm_btn_accent {
@@ -710,7 +1302,7 @@ button:focus-visible {
 .jm_btn_accent:hover,
 .jm_btn_accent:focus {
 	background: #fff;
-	color: var(--jm-ink);
+	color: #141414;
 	border-color: #fff;
 }
 
@@ -723,7 +1315,7 @@ button:focus-visible {
 .jm_btn_light:hover,
 .jm_btn_light:focus {
 	background: #fff;
-	color: var(--jm-ink);
+	color: #141414;
 }
 
 .jm_link_arrow {
@@ -760,7 +1352,7 @@ button:focus-visible {
 
 .jm_hero h1 {
 	margin: 0 0 24px;
-	font-size: clamp(34px, 5vw, 60px);
+	font-size: clamp(2.429rem, 5vw, 4.286rem);
 	font-weight: 800;
 	line-height: 1.05;
 	letter-spacing: -0.03em;
@@ -774,7 +1366,7 @@ button:focus-visible {
 .jm_lead {
 	max-width: 620px;
 	margin: 0 0 28px;
-	font-size: 18px;
+	font-size: 1.286rem;
 	line-height: 1.6;
 	color: var(--jm-ink-soft);
 }
@@ -804,7 +1396,7 @@ button:focus-visible {
 
 .jm_stat_value {
 	display: block;
-	font-size: clamp(40px, 4.4vw, 56px);
+	font-size: clamp(2.857rem, 4.4vw, 4rem);
 	font-weight: 800;
 	line-height: 1;
 	letter-spacing: -0.03em;
@@ -812,13 +1404,13 @@ button:focus-visible {
 }
 
 .jm_stat_value.jm_accent {
-	color: var(--jm-accent);
+	color: var(--jm-accent-text);
 }
 
 .jm_stat_label {
 	display: block;
 	margin-top: 10px;
-	font-size: 14px;
+	font-size: 1rem;
 	line-height: 1.4;
 	color: var(--jm-ink-soft);
 }
@@ -831,7 +1423,7 @@ button:focus-visible {
 }
 
 .jm_band_dark {
-	background: var(--jm-ink);
+	background: var(--jm-dark-band);
 	color: #fff;
 }
 
@@ -847,7 +1439,7 @@ button:focus-visible {
 .jm_band_lead {
 	max-width: 420px;
 	margin: 0;
-	font-size: 15px;
+	font-size: 1.071rem;
 	line-height: 1.5;
 	color: var(--jm-ink-soft);
 }
@@ -888,7 +1480,7 @@ button:focus-visible {
 
 /* With the stage marker: finished stages dark, current accent, next ones light */
 .jm_flow_tracked li .jm_flow_bar {
-	background: #C9CCD2;
+	background: var(--jm-track);
 }
 
 .jm_flow_tracked li.is_done .jm_flow_bar {
@@ -899,7 +1491,7 @@ button:focus-visible {
    and the round marker sits at the share of the typical term already elapsed */
 .jm_flow_tracked li.is_current .jm_flow_bar {
 	background: #F5D9CB;
-	background: color-mix(in srgb, var(--jm-accent) 22%, #fff);
+	background: color-mix(in srgb, var(--jm-accent) 22%, var(--jm-bg));
 	--jm-dot: 38px;
 }
 
@@ -920,7 +1512,7 @@ button:focus-visible {
 	width: var(--jm-dot, 38px);
 	height: var(--jm-dot, 38px);
 	margin: calc(var(--jm-dot, 38px) / -2) 0 0 calc(var(--jm-p, 0) * var(--jm-dot, 38px) * -0.01);
-	border: 5px solid #fff;
+	border: 5px solid var(--jm-bg);
 	border-radius: 50%;
 	background: var(--jm-accent);
 	box-shadow: 0 0 0 4px var(--jm-accent), 0 2px 8px rgba(0, 0, 0, 0.25);
@@ -930,10 +1522,10 @@ button:focus-visible {
 	display: block;
 	margin-top: 8px;
 	font-family: var(--jm-mono);
-	font-size: 13px;
+	font-size: 0.929rem;
 	font-weight: 600;
 	line-height: 1.4;
-	color: var(--jm-accent);
+	color: var(--jm-accent-text);
 }
 
 .jm_flow_name,
@@ -945,14 +1537,14 @@ button:focus-visible {
 
 .jm_flow_name {
 	margin-top: 14px;
-	font-size: 14px;
+	font-size: 1rem;
 	font-weight: 800;
 	line-height: 1.3;
 }
 
 .jm_flow_term {
 	margin-top: 4px;
-	font-size: 13px;
+	font-size: 0.929rem;
 	line-height: 1.4;
 	color: var(--jm-ink-soft);
 }
@@ -964,7 +1556,7 @@ button:focus-visible {
 	border-radius: 999px;
 	background: var(--jm-accent);
 	color: #fff;
-	font-size: 10px;
+	font-size: 0.857rem;
 	font-weight: 700;
 	line-height: 1.3;
 }
@@ -991,14 +1583,14 @@ button:focus-visible {
 	display: block;
 	margin-bottom: 12px;
 	font-family: var(--jm-mono);
-	font-size: 22px;
+	font-size: 1.571rem;
 	font-weight: 500;
-	color: var(--jm-accent);
+	color: var(--jm-accent-text);
 }
 
 .jm_home .jm_mostread_list h3 {
 	margin: 0 0 8px;
-	font-size: 18px;
+	font-size: 1.286rem;
 	font-weight: 800;
 	line-height: 1.35;
 }
@@ -1010,13 +1602,13 @@ button:focus-visible {
 
 .jm_mostread_list h3 a:hover,
 .jm_mostread_list h3 a:focus {
-	color: var(--jm-accent);
+	color: var(--jm-accent-text);
 	text-decoration: underline;
 }
 
 .jm_mostread_authors {
 	margin: 0 0 14px;
-	font-size: 14px;
+	font-size: 1rem;
 	color: var(--jm-ink-soft);
 }
 
@@ -1026,12 +1618,12 @@ button:focus-visible {
 	justify-content: space-between;
 	gap: 8px 16px;
 	margin: 0;
-	font-size: 14px;
+	font-size: 1rem;
 	color: var(--jm-ink-soft);
 }
 
 .jm_mostread_numbers strong {
-	font-size: 22px;
+	font-size: 1.571rem;
 	font-weight: 800;
 	color: var(--jm-ink);
 }
@@ -1061,7 +1653,7 @@ button:focus-visible {
 
 .jm_cta_text {
 	max-width: 720px;
-	font-size: 16px;
+	font-size: 1.143rem;
 	line-height: 1.6;
 	color: #C9C9C9;
 }
@@ -1103,10 +1695,10 @@ button:focus-visible {
 .jm_article_num {
 	flex: 0 0 32px;
 	font-family: var(--jm-mono);
-	font-size: 20px;
+	font-size: 1.429rem;
 	font-weight: 500;
 	line-height: 1.4;
-	color: var(--jm-accent);
+	color: var(--jm-accent-text);
 }
 
 .jm_article_main {
@@ -1116,7 +1708,7 @@ button:focus-visible {
 
 .jm_articles .jm_article_title {
 	margin: 0 0 10px;
-	font-size: clamp(18px, 1.8vw, 22px);
+	font-size: clamp(1.286rem, 1.8vw, 1.571rem);
 	font-weight: 800;
 	line-height: 1.3;
 }
@@ -1128,19 +1720,19 @@ button:focus-visible {
 
 .jm_article_title a:hover,
 .jm_article_title a:focus {
-	color: var(--jm-accent);
+	color: var(--jm-accent-text);
 	text-decoration: underline;
 }
 
 .jm_article_authors {
 	margin: 0 0 8px;
-	font-size: 15px;
+	font-size: 1.071rem;
 	color: var(--jm-ink-soft);
 }
 
 .jm_article_doi {
 	margin: 0;
-	font-size: 13px;
+	font-size: 0.929rem;
 	color: var(--jm-ink-soft);
 	overflow-wrap: anywhere;
 }
@@ -1156,7 +1748,7 @@ button:focus-visible {
 
 .jm_article_views_value {
 	display: block;
-	font-size: 28px;
+	font-size: 2rem;
 	font-weight: 800;
 	line-height: 1;
 }
@@ -1164,7 +1756,7 @@ button:focus-visible {
 .jm_article_views_label {
 	display: block;
 	margin-top: 4px;
-	font-size: 13px;
+	font-size: 0.929rem;
 	color: var(--jm-ink-soft);
 }
 
@@ -1174,15 +1766,15 @@ button:focus-visible {
 	border: 1.5px solid var(--jm-ink);
 	border-radius: 8px;
 	color: var(--jm-ink);
-	font-size: 14px;
+	font-size: 1rem;
 	font-weight: 700;
 	text-decoration: none;
 }
 
 .jm_article_pdf:hover,
 .jm_article_pdf:focus {
-	background: var(--jm-ink);
-	color: #fff;
+	background: var(--jm-inv-bg);
+	color: var(--jm-inv-fg);
 }
 
 .jm_issue_links {
@@ -1244,7 +1836,7 @@ button:focus-visible {
 
 .jm_article_page h1.page_title {
 	margin: 0 0 16px;
-	font-size: clamp(26px, 3.4vw, 40px);
+	font-size: clamp(1.857rem, 3.4vw, 2.857rem);
 	font-weight: 800;
 	line-height: 1.15;
 	letter-spacing: -0.02em;
@@ -1253,21 +1845,21 @@ button:focus-visible {
 
 .jm_article_page .subtitle {
 	margin: 0 0 16px;
-	font-size: 20px;
+	font-size: 1.429rem;
 	line-height: 1.4;
 	color: var(--jm-ink-soft);
 }
 
 .jm_published {
 	margin: 0 0 20px;
-	font-size: 15px;
+	font-size: 1.071rem;
 	font-weight: 600;
 	color: var(--jm-ink);
 }
 
 .jm_published_label {
 	margin-right: 8px;
-	font-size: 12px;
+	font-size: 0.857rem;
 	font-weight: 800;
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
@@ -1295,7 +1887,7 @@ button:focus-visible {
 
 .jm_article_page .authors .name {
 	display: block;
-	font-size: 18px;
+	font-size: 1.286rem;
 	font-weight: 800;
 }
 
@@ -1303,25 +1895,25 @@ button:focus-visible {
 .jm_article_page .authors .userGroup,
 .jm_article_page .authors .orcid {
 	display: block;
-	font-size: 15px;
+	font-size: 1.071rem;
 	line-height: 1.5;
 	color: var(--jm-ink-soft);
 }
 
 .jm_article_page .authors .orcid a {
 	font-family: var(--jm-mono);
-	font-size: 14px;
+	font-size: 1rem;
 }
 
 .jm_doi {
 	margin: 0 0 24px;
-	font-size: 15px;
+	font-size: 1.071rem;
 	overflow-wrap: anywhere;
 }
 
 .jm_doi_label {
 	margin-right: 8px;
-	font-size: 12px;
+	font-size: 0.857rem;
 	font-weight: 800;
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
@@ -1347,16 +1939,16 @@ button:focus-visible {
 	padding: 13px 24px;
 	border: 2px solid var(--jm-ink);
 	border-radius: 8px;
-	background: var(--jm-ink);
-	color: #fff;
-	font-size: 15px;
+	background: var(--jm-inv-bg);
+	color: var(--jm-inv-fg);
+	font-size: 1.071rem;
 	font-weight: 700;
 	line-height: 1.2;
 	text-decoration: none;
 }
 
 .jm_article_page .obj_galley_link_supplementary {
-	background: #fff;
+	background: var(--jm-bg);
 	color: var(--jm-ink);
 }
 
@@ -1374,7 +1966,7 @@ button:focus-visible {
 .jm_article_page .item.author_bios h2.label {
 	margin: 0 0 14px;
 	padding: 0;
-	font-size: 24px !important;
+	font-size: 1.714rem !important;
 	font-weight: 800;
 	letter-spacing: -0.01em;
 	text-transform: none;
@@ -1384,9 +1976,9 @@ button:focus-visible {
 .jm_article_page .abstract,
 .jm_article_page .references .value,
 .jm_bio_text {
-	font-size: 17px;
+	font-size: 1.214rem;
 	line-height: 1.7;
-	color: #2A2A2A;
+	color: var(--jm-ink-2);
 }
 
 .jm_article_page .abstract p {
@@ -1406,7 +1998,7 @@ button:focus-visible {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 16px;
+	font-size: 1.143rem;
 	line-height: 1.6;
 }
 
@@ -1431,7 +2023,7 @@ button:focus-visible {
 
 .jm_bio_name {
 	margin: 0 0 8px;
-	font-size: 17px;
+	font-size: 1.214rem;
 	font-weight: 800;
 }
 
@@ -1441,12 +2033,12 @@ button:focus-visible {
 
 .jm_bio_orcid {
 	margin: 8px 0 0;
-	font-size: 14px;
+	font-size: 1rem;
 }
 
 .jm_article_page .references .value p {
 	margin: 0 0 10px;
-	font-size: 16px;
+	font-size: 1.143rem;
 	line-height: 1.65;
 	overflow-wrap: anywhere;
 }
@@ -1470,7 +2062,7 @@ button:focus-visible {
 .jm_cite .item > h2.label {
 	margin: 0 0 12px;
 	padding: 0;
-	font-size: 18px !important;
+	font-size: 1.286rem !important;
 	font-weight: 800;
 	letter-spacing: 0;
 	text-transform: none;
@@ -1481,7 +2073,7 @@ button:focus-visible {
 .jm_cite .sub_item > .label,
 .jm_cite .sub_item h3.label {
 	margin: 0 0 10px;
-	font-size: 14px;
+	font-size: 1rem;
 	font-weight: 800;
 	color: var(--jm-ink);
 }
@@ -1491,7 +2083,7 @@ button:focus-visible {
 	padding: 14px 16px;
 	background: var(--jm-neutral);
 	border-radius: 10px;
-	font-size: 14px;
+	font-size: 1rem;
 	line-height: 1.6;
 	overflow-wrap: anywhere;
 }
@@ -1527,11 +2119,11 @@ button:focus-visible {
 	box-shadow: none !important;
 	outline-offset: 3px;
 	color: var(--jm-ink);
-	font-size: 14px;
+	font-size: 1rem;
 	font-weight: 700;
 	line-height: 1.4;
 	text-decoration: underline;
-	text-decoration-color: rgba(20, 20, 20, 0.3);
+	text-decoration-color: rgba(128, 128, 128, 0.6);
 	text-underline-offset: 3px;
 	cursor: pointer;
 }
@@ -1542,7 +2134,7 @@ button:focus-visible {
 .jm_cite .citation_formats_button:focus,
 .jm_cite button:hover,
 .jm_cite button:focus {
-	color: var(--jm-accent);
+	color: var(--jm-accent-text);
 	text-decoration-color: currentColor;
 }
 
@@ -1580,12 +2172,12 @@ button:focus-visible {
 	padding: 24px;
 	border: 1px solid var(--jm-line);
 	border-radius: 12px;
-	background: #fff;
+	background: var(--jm-bg);
 }
 
 .jm_card h2 {
 	margin: 0 0 16px;
-	font-size: 18px;
+	font-size: 1.286rem;
 	font-weight: 800;
 	letter-spacing: 0;
 	text-transform: none;
@@ -1605,13 +2197,13 @@ button:focus-visible {
 
 .jm_facts {
 	margin: 0;
-	font-size: 14px;
+	font-size: 1rem;
 	line-height: 1.5;
 }
 
 .jm_facts dt {
 	margin: 0;
-	color: #5A5A5A;
+	color: var(--jm-muted);
 }
 
 .jm_facts dd {
@@ -1643,14 +2235,14 @@ button:focus-visible {
 
 .jm_usage_list dt {
 	margin: 0;
-	font-size: 14px;
+	font-size: 1rem;
 	color: var(--jm-ink-soft);
 }
 
 .jm_usage_list dd {
 	margin: 0;
 	font-family: var(--jm-mono);
-	font-size: 20px;
+	font-size: 1.429rem;
 	font-weight: 500;
 	color: var(--jm-ink);
 }
@@ -1664,7 +2256,7 @@ button:focus-visible {
 
 .pkp_structure_main h1,
 .page h1 {
-	font-size: clamp(28px, 4vw, 44px);
+	font-size: clamp(2rem, 4vw, 3.143rem);
 	font-weight: 800;
 	line-height: 1.1;
 	letter-spacing: -0.02em;
@@ -1677,7 +2269,7 @@ button:focus-visible {
 
 .cmp_breadcrumbs {
 	margin-bottom: 24px;
-	font-size: 13px;
+	font-size: 0.929rem;
 }
 
 .cmp_button,
@@ -1694,7 +2286,7 @@ input[type="submit"] {
 
 .obj_article_summary .title a:hover,
 .obj_article_summary .title a:focus {
-	color: var(--jm-accent);
+	color: var(--jm-accent-text);
 }
 
 .obj_galley_link {
@@ -1732,7 +2324,7 @@ input[type="submit"] {
 
 .jm_footer_name {
 	margin: 0 0 8px;
-	font-size: 20px;
+	font-size: 1.429rem;
 	font-weight: 800;
 	color: #fff;
 }
@@ -1740,7 +2332,7 @@ input[type="submit"] {
 .jm_footer_meta {
 	margin: 0 0 4px;
 	font-family: var(--jm-mono);
-	font-size: 13px;
+	font-size: 0.929rem;
 }
 
 .jm_footer_nav ul {
@@ -1777,7 +2369,7 @@ input[type="submit"] {
 
 .jm_footer_credit {
 	margin: 0;
-	font-size: 14px;
+	font-size: 1rem;
 	line-height: 1.4;
 	color: rgba(255, 255, 255, 0.6);
 }
@@ -1804,7 +2396,7 @@ input[type="submit"] {
 	border-radius: 50%;
 	background: #A6CE39;
 	color: #fff;
-	font-size: 9px;
+	font-size: 0.643rem;
 	font-weight: 800;
 	line-height: 1;
 }
@@ -1892,13 +2484,13 @@ input[type="submit"] {
 
 .page_issue_archive .obj_issue_summary h2 {
 	margin: 0 0 10px;
-	font-size: 22px;
+	font-size: 1.571rem;
 	line-height: 1.3;
 }
 
 .page_issue_archive .obj_issue_summary .description {
 	min-width: 0;
-	font-size: 16px;
+	font-size: 1.143rem;
 	line-height: 1.65;
 	overflow-wrap: anywhere;
 }
@@ -1955,8 +2547,255 @@ input[type="submit"] {
 .page_issue_archive .obj_issue_summary .series {
 	margin: 4px 0 0;
 	font-family: var(--jm-mono);
-	font-size: 14px;
+	font-size: 1rem;
 	font-weight: 500;
 	line-height: 1.4;
 	color: var(--jm-ink-soft);
+}
+
+/* ---------- Display settings: text size, light/dark theme ---------- */
+
+.jm_prefs {
+	display: flex;
+	align-items: center;
+	gap: 6px 12px;
+}
+
+.jm_prefs_group {
+	display: inline-flex;
+	align-items: center;
+	gap: 2px;
+	padding: 2px;
+	border: 1px solid var(--jm-line);
+	border-radius: 999px;
+	background: var(--jm-bg);
+}
+
+.jm_topbar .jm_pref_btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex: none;
+	width: 30px;
+	height: 30px;
+	margin: 0;
+	padding: 0;
+	border: 0 !important;
+	border-radius: 50%;
+	background: transparent !important;
+	color: var(--jm-ink) !important;
+	font-family: inherit;
+	line-height: 1;
+	cursor: pointer;
+	box-shadow: none;
+}
+
+.jm_topbar .jm_pref_btn:hover:not(:disabled) {
+	background: var(--jm-neutral) !important;
+	color: var(--jm-ink) !important;
+}
+
+.jm_topbar .jm_pref_btn[aria-pressed="true"],
+.jm_topbar .jm_pref_btn[aria-pressed="true"]:hover {
+	background: var(--jm-inv-bg) !important;
+	color: var(--jm-inv-fg) !important;
+}
+
+.jm_topbar .jm_pref_btn:disabled {
+	opacity: 0.35;
+	cursor: default;
+}
+
+.jm_pref_a {
+	font-size: 1.071rem;
+	font-weight: 800;
+	line-height: 1;
+}
+
+.jm_pref_a_small {
+	font-size: 0.857rem;
+}
+
+.jm_pref_a_large {
+	font-size: 1.357rem;
+}
+
+.jm_flow_hint {
+	margin: 18px 0 0;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: var(--jm-ink-soft);
+}
+
+@media (max-width: 760px) {
+	.jm_topbar_issn {
+		display: none;
+	}
+
+	.jm_topbar_inner {
+		flex-wrap: wrap;
+		padding-top: 6px;
+		padding-bottom: 6px;
+	}
+
+	.jm_topbar_right {
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		margin-left: auto;
+	}
+}
+
+/* Text size: the whole page is scaled through the root font size
+   (the parent theme sets 14px; every size in this theme is in rem) */
+html[data-jm-size="-1"],
+html[data-jm-size="-1"] body {
+	font-size: 12.6px;
+}
+
+html[data-jm-size="1"],
+html[data-jm-size="1"] body {
+	font-size: 15.7px;
+}
+
+html[data-jm-size="2"],
+html[data-jm-size="2"] body {
+	font-size: 17.5px;
+}
+
+html[data-jm-size="3"],
+html[data-jm-size="3"] body {
+	font-size: 21px;
+}
+
+/* Dark theme: colours come from the variables at the top of this file */
+html[data-jm-theme="dark"] {
+	color-scheme: dark;
+}
+
+html[data-jm-theme="dark"] .pkp_structure_footer_wrapper {
+	border-top: 1px solid var(--jm-line);
+}
+
+html[data-jm-theme="dark"] .jm_topbar .jm_pref_btn:hover:not(:disabled) {
+	background: var(--jm-line) !important;
+}
+
+html[data-jm-theme="dark"] img {
+	opacity: 0.92;
+}
+
+@media print {
+	.jm_prefs {
+		display: none;
+	}
+}
+
+html[data-jm-theme="dark"] .jm_flow:not(.jm_flow_tracked) .jm_flow_bar {
+	background: #7E838D;
+}
+
+/* Language switch: a vertical line after the display settings, then the globe in line with EN / UA */
+.jm_topbar .jm_prefs + .jm_lang {
+	padding-left: 14px;
+	border-left: 1px solid var(--jm-line);
+}
+
+.jm_lang {
+	flex-direction: row;
+	align-items: center;
+	gap: 8px;
+}
+
+.jm_lang_icon {
+	width: 18px;
+	height: 18px;
+}
+
+/* The status line under the workflow strip: who the marked manuscript belongs to, its stage and progress */
+.jm_flow_status {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px 14px;
+	margin: 26px 0 0;
+	font-size: 1.071rem;
+	line-height: 1.4;
+}
+
+.jm_flow_status .jm_flow_now {
+	margin: 0;
+	padding: 3px 12px;
+	font-size: 0.929rem;
+	font-weight: 700;
+}
+
+.jm_flow_status_stage {
+	font-weight: 800;
+}
+
+.jm_flow_status .jm_flow_progress {
+	display: inline;
+	margin: 0;
+}
+
+/* ORCID mark: dark letters on the green circle for contrast */
+.jm_orcid_icon {
+	color: #111 !important;
+}
+
+/* Dark theme: links and buttons. The site's own stylesheet sets `a {color: #000}` and a white
+   `button`, which would be black on black here. */
+html:where([data-jm-theme="dark"]) a {
+	color: var(--jm-accent-text);
+}
+
+html:where([data-jm-theme="dark"]) a:hover,
+html:where([data-jm-theme="dark"]) a:focus {
+	color: #FFC2A3;
+}
+
+html[data-jm-theme="dark"] button:not(.jm_pref_btn):not(.pkp_site_nav_toggle):not(.citation_formats_button),
+html[data-jm-theme="dark"] .cmp_button:not(.jm_pref_btn),
+html[data-jm-theme="dark"] .pkp_button {
+	background-color: transparent !important;
+	color: var(--jm-accent-text) !important;
+	border-color: var(--jm-accent-text) !important;
+}
+
+html[data-jm-theme="dark"] button:not(.jm_pref_btn):not(.pkp_site_nav_toggle):not(.citation_formats_button):hover,
+html[data-jm-theme="dark"] .cmp_button:not(.jm_pref_btn):hover,
+html[data-jm-theme="dark"] .pkp_button:hover {
+	background-color: var(--jm-accent) !important;
+	color: #fff !important;
+	border-color: var(--jm-accent) !important;
+}
+
+/* "More citation formats" keeps the text colour of the card (the site's button style would make it orange) */
+.jm_cite .citation_formats_button,
+.jm_cite button {
+	color: var(--jm-ink) !important;
+}
+
+/* Search button: the magnifier sits on an accent square (the parent theme draws it with ::after) */
+html[data-jm-theme="dark"] .page_search .submit button::after {
+	background: var(--jm-accent) !important;
+	color: #fff !important;
+}
+
+/* How to cite: no frame around "More citation formats" */
+.jm_cite .citation_display .citation_formats {
+	margin-top: 8px;
+	border: 0 !important;
+	border-radius: 0;
+}
+
+.jm_cite .citation_display .citation_formats_button {
+	min-height: 0;
+	padding: 0 !important;
+}
+
+.jm_cite .citation_display .citation_formats_button::after {
+	position: static;
+	margin-left: 8px;
+	transform: none;
 }

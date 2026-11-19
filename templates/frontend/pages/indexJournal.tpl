@@ -111,11 +111,22 @@
 							<span class="jm_flow_bar"{if $jmStage && $jmStage.index == $jmIdx} style="--jm-p:{$jmStage.percent|intval}"{/if}>{if $jmStage && $jmStage.index == $jmIdx}<span class="jm_flow_fill" aria-hidden="true"></span><span class="jm_flow_dot" aria-hidden="true"></span>{/if}</span>
 							<span class="jm_flow_name">{translate key="plugins.themes.journalMetrics.workflow.`$jmKey`"}</span>
 							<span class="jm_flow_term">{translate key="plugins.themes.journalMetrics.workflow.`$jmKey`.term"}</span>
-							{if $jmStage && $jmStage.index == $jmIdx}<span class="jm_flow_now">{if $jmStage.mine}{translate key="plugins.themes.journalMetrics.workflow.currentMine"}{else}{translate key="plugins.themes.journalMetrics.workflow.current"}{/if}</span>
-								<span class="jm_flow_progress" title="{translate|escape key="plugins.themes.journalMetrics.workflow.progressHint" total=$jmStage.total}">{if $jmStage.over}{translate key="plugins.themes.journalMetrics.workflow.progressOver" day=$jmStage.day total=$jmStage.total}{else}{translate key="plugins.themes.journalMetrics.workflow.progress" day=$jmStage.day total=$jmStage.total percent=$jmStage.percent}{/if}</span>{/if}
+							
 						</li>
 					{/foreach}
 				</ol>
+				{if $jmStage}
+					<p class="jm_flow_status" role="status">
+						<span class="jm_flow_now">{if $jmStage.mine}{translate key="plugins.themes.journalMetrics.workflow.currentMine"}{elseif $isUserLoggedIn}{translate key="plugins.themes.journalMetrics.workflow.currentOther"}{else}{translate key="plugins.themes.journalMetrics.workflow.current"}{/if}</span>
+						<span class="jm_flow_status_stage">{translate key="plugins.themes.journalMetrics.workflow.`$jmStage.key`"}</span>
+						<span class="jm_flow_progress" title="{translate|escape key="plugins.themes.journalMetrics.workflow.progressHint" total=$jmStage.total}">{if $jmStage.over}{translate key="plugins.themes.journalMetrics.workflow.progressOver" day=$jmStage.day total=$jmStage.total}{else}{translate key="plugins.themes.journalMetrics.workflow.progress" day=$jmStage.day total=$jmStage.total percent=$jmStage.percent}{/if}</span>
+					</p>
+				{/if}
+				{if $activeTheme->getOption('showWorkflowCurrent') && !$jmStage && $activeTheme->getWorkflowMarkerMode() == 'own_only'}
+					<p class="jm_flow_hint">
+						{if $isUserLoggedIn}{translate key="plugins.themes.journalMetrics.workflow.hintNone"}{else}<a href="{url page="login"}">{translate key="plugins.themes.journalMetrics.workflow.hintGuest"}</a>{/if}
+					</p>
+				{/if}
 				<p class="jm_source">{translate key="plugins.themes.journalMetrics.workflow.note"}</p>
 			</div>
 		</section>
@@ -131,7 +142,8 @@
 	{/if}
 
 	{* ---------- Most read articles of the two latest issues ---------- *}
-	{assign var="jmMostRead" value=$activeTheme->getMostRead(3, 2)}
+	{assign var="jmMostRead" value=null}
+	{if $activeTheme->getOption('showMostRead')}{assign var="jmMostRead" value=$activeTheme->getMostRead(3, 2)}{/if}
 	{if $jmMostRead}
 		<section class="jm_wrap jm_block jm_mostread" aria-labelledby="jm-mostread-title">
 			<p class="jm_eyebrow jm_eyebrow_muted">{translate key="plugins.themes.journalMetrics.mostRead.eyebrow"}</p>
@@ -153,7 +165,7 @@
 	{/if}
 
 	{* ---------- Latest announcement as a call-to-action band ---------- *}
-	{if $numAnnouncementsHomepage && $announcements|@count}
+	{if $activeTheme->getOption('showAnnouncementBand') && $numAnnouncementsHomepage && $announcements|@count}
 		{foreach from=$announcements item=jmAnnouncement name=jmAnn}
 			{if $smarty.foreach.jmAnn.first}
 				<section class="jm_band jm_band_dark jm_cta_band" aria-labelledby="jm-announcement-title">
@@ -175,7 +187,7 @@
 	{/if}
 
 	{* ---------- Latest issue: every article with authors, DOI, views and PDF ---------- *}
-	{if $issue}
+	{if $issue && $activeTheme->getOption('showIssueArticles')}
 		<section class="jm_wrap jm_block jm_issue current_issue" aria-labelledby="jm-issue-title">
 			<a id="homepageIssue"></a>
 			<p class="jm_eyebrow jm_eyebrow_muted">{translate key="journal.currentIssue"} · {$issue->getIssueIdentification()|escape}{if $issue->getDatePublished()} · <time datetime="{$issue->getDatePublished()|date_format:"%Y-%m-%d"}">{$issue->getDatePublished()|date_format:$dateFormatShort}</time>{/if}</p>
